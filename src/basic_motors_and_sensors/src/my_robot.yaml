@@ -1,0 +1,10 @@
+max_motor_command: 400.0
+init_speed: 100.0
+K_p: 100.0
+K_d: 3.0
+
+wheel_width_actual: 0.151
+wheel_width_model: 0.151
+body_length: 0.235
+wheel_diameter_actual: 0.060
+wheel_diameter_model: 0.060

@@ -1,0 +1,16 @@
+<launch>
+  <!-- First load parameters from a YAML file -->
+  <!-- the "$(find _____)" piece locates the package path (this should be the package that holds the YAML file). -->
+  <!-- See the "roslaunch" page https://wiki.ros.org/roslaunch/XML -->
+  <rosparam command="load" file="$(find basic_motors_and_sensors)/src/my_robot.yaml" />
+  
+  
+  
+  <include file="$(find rplidar_ros)/launch/rplidar.launch" />
+  
+  <!-- Next launch a motor_node from the python file MotorNode.py -->
+  <node pkg="basic_motors_and_sensors" type="SensorsNodeCombined.py" name="sensors_node" />
+  <node pkg="basic_motors_and_sensors" type="lidar_follower.py" name="rosbot" />
+  <!-- <node pkg="basic_motors_and_sensors" type="MotorNode.py" name="motor_node" /> -->
+  
+</launch>
